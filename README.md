@@ -51,7 +51,7 @@ Add pairs USDT and ETH:
 
 ```python
 import bitpreco
-bitp = bitpreco.Api("<api_key>", "<signature>", paris='usdt')
+bitp = bitpreco.Api("<api_key>", "<signature>", pairs='usdt')
 
 bitp.ticker()
 bitp.orderbook()

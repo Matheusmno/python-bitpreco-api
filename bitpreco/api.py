@@ -5,9 +5,13 @@ from .erros import ApiError
 
 
 class Api:   
-    def __init__(self, api_key='', signature='', pairs='btc'):
-        self.url = f'https://api.bitpreco.com/{pairs}-brl/'
-        self.host = 'https://api.bitpreco.com/trading/'
+    def __init__(self, api_key='', signature='', pairs='btc', simulator=False):
+        if simulator == False:
+            self.url = f'https://api.bitpreco.com/{pairs}-brl/'
+            self.host = 'https://api.bitpreco.com/trading/'
+        else:
+            self.url = f'https://api-simulator.bitpreco.com/{pairs}-brl/'
+            self.host = 'https://api-simulator.bitpreco.com/trading/'
         self.headers = {'Content-type': 'application/json'}
         self.keys = signature + api_key
 
